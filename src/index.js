@@ -1,6 +1,7 @@
 //Importing all necessary dependencies
 const express = require('express')
 const path = require('path');
+const ejs = require('ejs')
 
 //importing database
 const {startDatabase} = require('./db/mongo');
@@ -118,7 +119,7 @@ console.log(user)
 
 //gets the main index.html page which will lead everywhere else
 app.get('/' , (req,res) => {
-    res.sendFile(path.join(__dirname, 'index.html'))
+    res.sendFile(path.join(__dirname, 'index.html' ))
 })
 
 
@@ -127,20 +128,16 @@ app.get('/users' , (req,res) => {
     res.send(user)
 })
 //gets the page when the server runs and displays the features
-app.get('/features' , (req,res) => {
-    res.send(features)
-})
+// app.get('/features' , (req,res) => {
+//     res.send(features)
+// })
 
 //displaying the emails of users supported in all features
-app.get('/supported' , (req,res) => {
-    res.send(`<div> <h1>Super Cool Feature</h1> ${superCoolFeature.map(feature => feature.email)}
-    <h1>Marketing Banner Feature</h1> ${marketingBanner.map(feature => feature.email)} 
-    <h1>Simplified Nav Feature</h1> ${simplifiedNavBar.map(feature => feature.email)} 
-    <h1>EnhancedDashboard Feature</h1> ${enhancedDashboardFeature.map(feature => feature.email)} 
-    <h1>NewUserOnboarding Feature</h1> ${newUserOnBoardingJourney.map(feature => feature.email)} 
-    </div>
-    `)
+app.get('/features' , (req,res) => {
+    res.send({'superCoolFeature' : superCoolFeature , "MarketingBanner" : marketingBanner , "SimplifiedNavBar" : simplifiedNavBar ,
+    "EnhancedDashboardFeature" : enhancedDashboardFeature,"NewUserOnboardingJourney" : newUserOnBoardingJourney })
 })
+ 
 
 
 //which port the app will use 

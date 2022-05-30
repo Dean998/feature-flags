@@ -50,5 +50,10 @@ To check endpoints - on the home page click on the button corresponding to which
     
     
  `features` will display all the features and which users are supported underneath 
+ 
+# Tests
+ 
+  - Run `npm test` in the terminal 
+
 
  ## Ways to Improve
