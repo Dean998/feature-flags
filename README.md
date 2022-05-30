@@ -23,7 +23,6 @@ First assumption is this ...
   ```
                 {
                     "email":"foo@bar.com",
-                    "location":"GB" ,
                     "features": "feature_foo"
                 }
 ```

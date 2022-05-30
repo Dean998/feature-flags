@@ -4,7 +4,7 @@
   "description": "This repo contains the files required to run a simple feature flag API.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --forceExit",
     "start": "npx nodemon src index.js"
   },
   "repository": {
@@ -19,10 +19,14 @@
     "mongodb": "^4.6.0",
     "mongodb-memory-server": "^8.6.0",
     "mongoose": "^6.3.4",
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.16",
+    "supertest": "^6.2.3"
   },
   "bugs": {
     "url": "https://github.com/Dean998/feature-flags/issues"
   },
-  "homepage": "https://github.com/Dean998/feature-flags#readme"
+  "homepage": "https://github.com/Dean998/feature-flags#readme",
+  "devDependencies": {
+    "jest": "^28.1.0"
+  }
 }

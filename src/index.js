@@ -19,15 +19,51 @@ let marketingBanner = []
 let simplifiedNavBar = []
 let enhancedDashboardFeature = []
 let newUserOnBoardingJourney = []
-
+//This array will carry all of the features a set user has on their account 
 let allFeatures =[]
-let selectedUser =[]
+//Change this value to the user you would like to see - can even be typed in as a string like this..
+// instead of exampleUsers[0].email it can be "tom@example.com"
+let selectedUser = exampleUsers[0].email
 
 
 let user = {
     email : selectedUser,
     features : allFeatures
 }
+
+//this function gets which user you are and runs through for loops to see if they are included in the features and pushes it to the array allFeatures
+const fufilled = () => {  
+
+    checker()  
+      
+    for(let i = 0 ; i < superCoolFeature.length ; i++){
+      if(selectedUser.includes(superCoolFeature[i].email))
+      {allFeatures.push("SuperCoolFeature")}
+    }
+    for(let i = 0 ; i < simplifiedNavBar.length ; i++){
+      if(selectedUser.includes(simplifiedNavBar[i].email))
+      {allFeatures.push("Simplified NavBar")}
+    }
+    
+    for(let i = 0 ; i < marketingBanner.length ; i++){
+      if(selectedUser.includes(marketingBanner[i].email))
+      {allFeatures.push("Marketing Banner")}
+    }
+    
+    for(let i = 0 ; i < enhancedDashboardFeature.length ; i++){
+      if(selectedUser.includes(enhancedDashboardFeature[i].email))
+      {allFeatures.push("Enhanced Dashboard Banner")}
+    }
+    
+    for(let i = 0 ; i < newUserOnBoardingJourney.length ; i++){
+      if(selectedUser.includes(newUserOnBoardingJourney[i].email))
+      {allFeatures.push("NewUserOnboarding Banner")}
+    }
+
+}
+
+
+
 
 //Creating a function to see if criteria is fufilled
 const checker= () => {
@@ -66,23 +102,24 @@ const checker= () => {
       {marketingBanner.push(exampleUsers[j])}
         }
     }
-    console.log("SuperCoolFeature" , superCoolFeature)
-console.log("MarketingBanner" , marketingBanner)
-console.log("SimplifiedNavBar" , simplifiedNavBar)
-console.log("EnhancedDashboardFeature" , enhancedDashboardFeature)
-console.log("NewUserOnboardingJourney" , newUserOnBoardingJourney)
+    //these console logs contain all of the users that are supported within each feature
+// console.log("SuperCoolFeature" , superCoolFeature)
+// console.log("MarketingBanner" , marketingBanner)
+// console.log("SimplifiedNavBar" , simplifiedNavBar)
+// console.log("EnhancedDashboardFeature" , enhancedDashboardFeature)
+// console.log("NewUserOnboardingJourney" , newUserOnBoardingJourney)
 
 }
 
-checker()
+fufilled()
+//this console log shows what user it is and what features they have registered to their account 
+console.log(user)
+
 
 //gets the main index.html page which will lead everywhere else
 app.get('/' , (req,res) => {
     res.sendFile(path.join(__dirname, 'index.html'))
 })
-
-
-
 
 
 //gets the page when the server runs and displays the users
@@ -94,9 +131,15 @@ app.get('/features' , (req,res) => {
     res.send(features)
 })
 
-//displaying the emails of users supported in a certain feature
+//displaying the emails of users supported in all features
 app.get('/supported' , (req,res) => {
-    res.send(`<h1>${enhancedDashboardFeature.map(feature => feature.email)}</h1>`)
+    res.send(`<div> <h1>Super Cool Feature</h1> ${superCoolFeature.map(feature => feature.email)}
+    <h1>Marketing Banner Feature</h1> ${marketingBanner.map(feature => feature.email)} 
+    <h1>Simplified Nav Feature</h1> ${simplifiedNavBar.map(feature => feature.email)} 
+    <h1>EnhancedDashboard Feature</h1> ${enhancedDashboardFeature.map(feature => feature.email)} 
+    <h1>NewUserOnboarding Feature</h1> ${newUserOnBoardingJourney.map(feature => feature.email)} 
+    </div>
+    `)
 })
 
 
@@ -104,3 +147,5 @@ app.get('/supported' , (req,res) => {
 app.listen(3001, () => {
     console.log('listening on port 3001')
 })
+
+module.exports = app;
