@@ -30,21 +30,25 @@ First assumption is this ...
 
 # How to Run
 - Clone Repository to Local Machine 
-Next 
+
 - Run `npm install` in the terminal 
-Wait for node modules to install... then 
+
 - Run `npm start` 
+
 This will start up the server on <a href='http://localhost:3001'>localhost:3001</a>
 
 To check endpoints - on the home page click on the button corresponding to which endpoint you would like to see
 
 `User` will show you which user is inputted on line 26 in `index.js` and display what features are supported
-    ``` 
-            {
-                "email" : fred@example.com ,
-               "features":["SuperCoolFeature","Simplified NavBar"]
-            }
+    
     ```
+                {
+                    "email":'fred@example.com' ,
+                    "features":["SuperCoolFeature","Simplified NavBar"]
+                }
+    ```
+    
+    
  `features` will display all the features and which users are supported underneath 
 
  ## Ways to Improve
