@@ -7,10 +7,11 @@ The goal is to create an endpoint which shows what users are allowed to use feat
 # Plan
 
 In order to develop this API i aim to split up the development within 5 steps in order to complete it within 3 hours.
-    - Research into feature flags and the based way to handle the issue.
-    - Build a basic express application before building the API and functions
-    - Building functions inorder to see if a user fufills the criteria
-    - Building Tests and Testing using JEST
+
+- Research into feature flags and the based way to handle the issue.
+- Build a basic express application before building the API and functions
+- Building functions inorder to see if a user fufills the criteria
+- Building Tests and Testing using JEST
 
 # Assumptions
 First assumption is this ... 
@@ -26,3 +27,4 @@ First assumption is this ...
                     "features": "feature_foo"
                 }
 ```
+
