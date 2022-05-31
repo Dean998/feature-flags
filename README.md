@@ -54,6 +54,15 @@ To check endpoints - on the home page click on the button corresponding to which
 # Tests
  
   - Run `npm test` in the terminal 
+  
+  - Four tests will run based on criteria set within testing:
+      - Checking if the server is running 
+      - testing if data is recieved from going to an endpoint 
+      - checking the server for another endpoint 
+      - checking if a value can change if user is changed 
 
-
- ## Ways to Improve
+ ## Ways to Improve or if I had more time 
+  - Create a react app or implement script within HTML inorder to change which user you are instead of manually changing it on the code
+  - Using a database to store user information instead of relying on the in-memory database 
+  - Use other ways to fetch information out of arrays and objects & use less for loops and opt for .filter and .map more
+  - Look into making more tests and more endpoints just for testing purposes
